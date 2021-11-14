@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Add Medication | PillPlan</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <img src="https://cdn.glitch.me/47273c47-ef3f-435a-a5ae-aa1c682d99a5%2FScreen%20Shot%202021-11-14%20at%205.49.17%20AM.png?v=1636886989800" width="150" height="150">
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <h1>
+      Add Medication
+    </h1>
+    <br>
+    <a id = "links" href = "index.html" class = "container" style="background-color:white; border-radius: 25px;">Home</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id = "links" href = "hotlines.html" class = "container" style="background-color:white; border-radius: 25px;">Hotlines</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id = "links" href = "settings.html" class = "container" style="background-color:white; border-radius: 25px;">Settings</a>
+    <br><br>
+    <div class = "container" style="background-color:white; border-radius: 25px;">
+      <br>
+      <form action="index.html" method="post" id="signup">
+            <label for="name">Name of Medication: </label><input type="text" id="name" name="name" placeholder="Enter medication name" /><br>
+            <label for="frequencyDays">You are planning on taking this medication every </label><input type="number" min = "1" max = "365" id="freqDays" name="freqDays" placeholder="Enter number of days" />
+            <label> days.</label><br>
+            <label for="frequency">How many times a day will you be taking this medication? 
+              Please check your answer and all less than your answer to fill in all time slots.</label>
+          <fieldset>
+            <ol>
+              <li>  
+                <input type="checkbox" id="takeOnce" class="control">
+                <label for="takeOnce">1</label>
+                  <fieldset class="conditional">
+                    <ol>
+                      <li>
+                        <label for="time1">At what time?: </label>
+                        <input type="number" min = "0" max = "23" id="hour1" name="hour1" placeholder="Hour" />
+                        <input type="number" min = "0" max = "59" id="mins1" name="mins1" placeholder="Minutes" />
+                        <small></small>
+                      </li>
+                    </ol>
+                  </fieldset>
+              </li>
+              <li>
+                <input type="checkbox" id="takeTwice" class="control">
+                <label for="takeTwice">2</label>
+                  <fieldset class="conditional">
+                    <ol>
+                      <li>
+                        <label for="time2">At what time?: </label>
+                        <input type="number" min = "0" max = "23" id="hour2" name="hour2" placeholder="Hour" />
+                        <input type="number" min = "0" max = "59" id="mins2" name="mins2" placeholder="Minutes" />
+                        <small></small>
+                      </li>
+                    </ol>
+                  </fieldset>
+              </li>
+              <li>
+                  <input type="checkbox" id="takeThrice" class="control">
+                  <label for="takeThrice">3</label>
+                  <fieldset class="conditional">
+                    <ol>
+                      <li>
+                        <label for="time3">At what time?: </label>
+                        <input type="number" min = "0" max = "23" id="hour3" name="hour3" placeholder="Hour" />
+                        <input type="number" min = "0" max = "59" id="mins3" name="mins3" placeholder="Minutes" />
+                        <small></small>
+                      </li>
+                    </ol>
+                  </fieldset>
+              </li>
+              <li>
+                  <input type="checkbox" id="takeFour" class="control">
+                  <label for="takeFour">4</label>
+                  <fieldset class="conditional">
+                    <ol>
+                      <li>
+                        <label for="time4">At what time?: </label>
+                        <input type="number" min = "0" max = "23" id="hour4" name="hour4" placeholder="Hour" />
+                        <input type="number" min = "0" max = "59" id="mins4" name="mins4" placeholder="Minutes" />
+                        <small></small>
+                      </li>
+                    </ol>
+                  </fieldset>
+                </li>
+              </ol>
+          </fieldset>
+        <br>
+        <button id="submit">
+          Submit
+        </button>
+        <br>
+      </form>
+      <p>
+        Name of Medication: <span id="name"></span> <br>
+        You are planning on taking this medication every <span id="freqDays"> days.</span> <br>
+        <br>
+      </p>
+      <script>
+        var submit = document.getElementById("submit");
+        submit.onclick = function() {
+          var medName = document.getElementById("name").value;
+          var frequency = document.getElementById("freqDays").value;
+          
+          document.getElementById("name").innerText = medName;
+          document.getElementById("freqDays").innerText = frequency;
+        }
+      </script>
+     
+    </div>
+  </body>
+</html>
