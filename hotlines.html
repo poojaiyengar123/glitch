@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Hotlines | PillPlan</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <img src="https://cdn.glitch.me/47273c47-ef3f-435a-a5ae-aa1c682d99a5%2FScreen%20Shot%202021-11-14%20at%205.49.17%20AM.png?v=1636886989800" width="150" height="150">
+  </head>
+  <body>
+    <!-- this is the start of content -->
+    <h1>
+      Hotlines
+    </h1>
+    <br>
+    <a id = "links" href = "index.html" class = "container" style="background-color:white; border-radius: 25px;">Home</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id = "links" href = "add.html" class = "container" style="background-color:white; border-radius: 25px;">Add Medication</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id = "links" href = "settings.html" class = "container" style="background-color:white; border-radius: 25px;">Settings</a>
+    <br><br>
+    <div class = "container" style="background-color:white; border-radius: 25px;">
+      <br>
+      <form action="hotlines.html" method="post" id="hotlinesInfo">
+        <h1>
+          Hotline Information
+        </h1>
+        <label for="doc">Doctor's Number: </label><input type="text" id="docNum" name="docNum" placeholder="Enter Doctor's Number" /><br>
+        <label for="hospital">Hospital's Number: </label><input type="text" id="hospitalNum" name="hospitalNum" placeholder="Enter Hospital's Number" /><br>
+        <label for="emergencyContact1">Emergency Contact 1: </label><input type="text" id="emergencyContactNum1" name="emergencyContactNum1" placeholder="Enter Emergency Contact" /><br>
+        <label for="emergencyContact2">Emergency Contact 2: </label><input type="text" id="emergencyContactNum2" name="emergencyContactNum2" placeholder="Enter Emergency Contact" /><br>
+        <br>
+        <button id="submit">
+          Submit
+        </button>
+      </form>
+      <br>
+      <p>
+        Doctor's Number: <span id="outputDN"></span> <br>
+        Hospital's Number: <span id="outputHN"></span> <br>
+        Emergency Contact 1: <span id="outputEC1"></span> <br>
+        Emergency Contact 2: <span id="outputEC2"></span> <br>
+      </p>
+      <script>
+        var submit = document.getElementById("submit");
+        submit.onclick = function() {
+          var docNumber = document.getElementById("docNum").value;
+          var hospitalNumber = document.getElementById("hospitalNum").value;
+          var emergencyContactOne = document.getElementById("emergencyContactNum1").value;
+          var emergencyContactTwo = document.getElementById("emergencyContactNum2").value;
+          
+          document.getElementById("outputDN").innerText = docNumber;
+          document.getElementById("outputHN").innerText = hospitalNumber;
+          document.getElementById("outputEC1").innerText = emergencyContactOne;
+          document.getElementById("outputEC2").innerText = emergencyContactTwo;
+        }
+      </script>
+      <br>
+    </div>
+  </body>
+</html>
